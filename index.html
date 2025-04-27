@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeReady - Quebec Employment Termination Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="topbar">
+        <a href="#" class="logo">BeReady</a>
+        <div class="nav-buttons">
+            <button id="knowRightsBtn" class="nav-button"></button>
+            <button id="planBtn" class="nav-button"></button>
+        </div>
+        <div class="language-selector">
+            <select id="languageSelect">
+                <option value="en">Canadian English</option>
+                <option value="fr">Français Canadien</option>
+            </select>
+        </div>
+    </nav>
+    <main id="mainContent">
+        <div class="home-content" id="homeSection">
+            <p id="mainDescription" class="main-description"></p>
+            <div class="registration-section">
+                <p id="registerText" class="register-text"></p>
+                <button id="registerBtn" class="register-button"></button>
+            </div>
+        </div>
+
+        <div class="rights-content hidden" id="rightsSection">
+            <button id="learnLawsBtn" class="learn-laws-button"></button>
+            <div id="lawCard" class="law-card hidden">
+                <h3 id="lawTitle" class="law-title"></h3>
+                <p id="lawContent" class="law-content"></p>
+                <button id="nextLawBtn" class="next-law-button"></button>
+            </div>
+        </div>
+
+        <div class="plan-content hidden" id="planSection">
+            <h2 id="planTitle" class="plan-title"></h2>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="checkReviews">
+                    <label for="checkReviews" id="labelReviews"></label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="checkEmails">
+                    <label for="checkEmails" id="labelEmails"></label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="checkLawyer">
+                    <label for="checkLawyer" id="labelLawyer"></label>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
