@@ -1,61 +1,326 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeReady - Quebec Employment Termination Guide</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 </head>
-<body>
-    <nav class="topbar">
-        <a href="#" class="logo">BeReady</a>
-        <div class="nav-buttons">
-            <button id="knowRightsBtn" class="nav-button"></button>
-            <button id="planBtn" class="nav-button"></button>
-        </div>
-        <div class="language-selector">
-            <select id="languageSelect">
-                <option value="en">Canadian English</option>
-                <option value="fr">Français Canadien</option>
-            </select>
+
+<body class="min-h-screen bg-base-100 font-sans">
+    <nav class="navbar bg-base-200 shadow-md sticky top-0 z-10">
+        <div class="container mx-auto navbar-container flex justify-between items-center">
+            <div class="navbar-start">
+                <a href="#" class="btn btn-ghost normal-case text-xl font-bold logo">BeReady</a>
+            </div>
+            <div class="navbar-center hidden md:flex">
+                <div class="join shadow-sm">
+                    <a href="#rights-section" class="btn join-item btn-sm md:btn-md" id="knowRightsBtn">Know Your
+                        Rights</a>
+                    <a href="#plan-section" class="btn join-item btn-sm md:btn-md" id="planBtn">Create Your Plan</a>
+                </div>
+            </div>
+            <div class="navbar-end">
+                <select id="languageSelect" class="select select-bordered select-sm bg-base-100">
+                    <option value="en">Canadian English</option>
+                    <option value="fr">Français Canadien</option>
+                </select>
+            </div>
         </div>
     </nav>
-    <main id="mainContent">
-        <div class="home-content" id="homeSection">
-            <p id="mainDescription" class="main-description"></p>
-            <div class="registration-section">
-                <p id="registerText" class="register-text"></p>
-                <button id="registerBtn" class="register-button"></button>
-            </div>
-        </div>
 
-        <div class="rights-content hidden" id="rightsSection">
-            <button id="learnLawsBtn" class="learn-laws-button"></button>
-            <div id="lawCard" class="law-card hidden">
-                <h3 id="lawTitle" class="law-title"></h3>
-                <p id="lawContent" class="law-content"></p>
-                <button id="nextLawBtn" class="next-law-button"></button>
-            </div>
-        </div>
+    <main id="mainContent" class="container mx-auto px-4 pb-12">
+        <!-- Hero Section -->
+        <section id="home-section" class="py-12">
+            <div class="hero bg-base-200 rounded-box mb-8">
+                <div class="hero-content text-center py-10">
+                    <div class="max-w-2xl">
+                        <!-- English Content -->
+                        <div class="lang-en">
+                            <h1 class="text-4xl font-bold mb-4">Prepare for Career Transitions</h1>
+                            <p class="text-xl mb-8">Be Ready prepares you for the day your contract is terminated by
+                                helping you develop the right reflexes and plan for the eventuality.</p>
+                            <div class="card bg-base-100 shadow-lg">
+                                <div class="card-body">
+                                    <p class="text-lg">Register to be added to the list of people we are ready. We will
+                                        contact you with news and updates when we launch!</p>
+                                    <div class="card-actions justify-center mt-6">
+                                        <button class="btn btn-primary btn-lg">Register Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-        <div class="plan-content hidden" id="planSection">
-            <h2 id="planTitle" class="plan-title"></h2>
-            <div class="checklist">
-                <div class="checklist-item">
-                    <input type="checkbox" id="checkReviews">
-                    <label for="checkReviews" id="labelReviews"></label>
-                </div>
-                <div class="checklist-item">
-                    <input type="checkbox" id="checkEmails">
-                    <label for="checkEmails" id="labelEmails"></label>
-                </div>
-                <div class="checklist-item">
-                    <input type="checkbox" id="checkLawyer">
-                    <label for="checkLawyer" id="labelLawyer"></label>
+                        <!-- French Content -->
+                        <div class="lang-fr hidden">
+                            <h1 class="text-4xl font-bold mb-4">Préparez-vous aux Transitions de Carrière</h1>
+                            <p class="text-xl mb-8">Be Ready vous prépare pour le jour où votre contrat sera résilié en
+                                vous aidant à développer les bons réflexes et à planifier cette éventualité.</p>
+                            <div class="card bg-base-100 shadow-lg">
+                                <div class="card-body">
+                                    <p class="text-lg">Inscrivez-vous pour être ajouté à la liste des personnes que nous
+                                        préparons. Nous vous contacterons avec les nouvelles et les mises à jour lors du
+                                        lancement !</p>
+                                    <div class="card-actions justify-center mt-6">
+                                        <button class="btn btn-primary btn-lg">S'inscrire Maintenant</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Rights Section -->
+        <section id="rights-section" class="py-10">
+            <!-- English Content -->
+            <div class="lang-en">
+                <h2 class="text-3xl font-bold text-center mb-10">Know Your Rights</h2>
+
+                <div class="grid gap-6 md:grid-cols-3 sm:grid-cols-1">
+                    <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary">Notice of Termination</h3>
+                            <p class="py-2">In Quebec, employers must provide written notice before terminating
+                                employment. The notice period depends on your length of service:</p>
+                            <ul class="list-disc list-inside ml-2 mt-2">
+                                <li>1 week for 3 months to 1 year</li>
+                                <li>2 weeks for 1-5 years</li>
+                                <li>4 weeks for 5-10 years</li>
+                                <li>8 weeks for 10+ years</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary">Severance Pay</h3>
+                            <p class="py-2">If notice is not given, the employer must pay compensation equal to the
+                                wages you would have earned during the notice period. This is called pay in lieu of
+                                notice.</p>
+                            <p class="py-2">This compensation must be calculated based on your regular wage, excluding
+                                overtime.</p>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary">Final Payment</h3>
+                            <p class="py-2">Upon termination, you must receive:</p>
+                            <ul class="list-disc list-inside ml-2 mt-2">
+                                <li>All unpaid wages</li>
+                                <li>Accumulated vacation pay</li>
+                                <li>Any other amounts owing</li>
+                            </ul>
+                            <p class="pt-2">These must be paid within 7 days of termination.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- French Content -->
+            <div class="lang-fr hidden">
+                <h2 class="text-3xl font-bold text-center mb-10">Connaître Vos Droits</h2>
+
+                <div class="grid gap-6 md:grid-cols-3 sm:grid-cols-1">
+                    <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary">Avis de cessation d'emploi</h3>
+                            <p class="py-2">Au Québec, les employeurs doivent fournir un avis écrit avant de mettre fin
+                                à l'emploi. La période de préavis dépend de votre ancienneté:</p>
+                            <ul class="list-disc list-inside ml-2 mt-2">
+                                <li>1 semaine pour 3 mois à 1 an</li>
+                                <li>2 semaines pour 1-5 ans</li>
+                                <li>4 semaines pour 5-10 ans</li>
+                                <li>8 semaines pour 10+ ans</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary">Indemnité de départ</h3>
+                            <p class="py-2">Si l'avis n'est pas donné, l'employeur doit verser une indemnité égale au
+                                salaire que vous auriez gagné pendant la période de préavis. C'est ce qu'on appelle
+                                l'indemnité compensatrice de préavis.</p>
+                            <p class="py-2">Cette indemnité doit être calculée sur la base de votre salaire régulier, à
+                                l'exclusion des heures supplémentaires.</p>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary">Paiement final</h3>
+                            <p class="py-2">À la fin de l'emploi, vous devez recevoir:</p>
+                            <ul class="list-disc list-inside ml-2 mt-2">
+                                <li>Tous les salaires impayés</li>
+                                <li>L'indemnité de vacances accumulée</li>
+                                <li>Tout autre montant dû</li>
+                            </ul>
+                            <p class="pt-2">Ces montants doivent être payés dans les 7 jours suivant la cessation
+                                d'emploi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plan Section -->
+        <section id="plan-section" class="py-10">
+            <!-- English Content -->
+            <div class="lang-en">
+                <h2 class="text-3xl font-bold text-center mb-8">Your Termination Checklist</h2>
+                <div class="card bg-base-100 shadow-lg w-full max-w-2xl mx-auto border border-base-300">
+                    <div class="card-body">
+                        <div class="text-center mb-6">
+                            <p class="text-lg">Use this checklist to ensure you're prepared when facing employment
+                                termination.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="form-control bg-base-200 p-4 rounded-lg">
+                                <label class="label cursor-pointer justify-start gap-4">
+                                    <input type="checkbox" class="checkbox checkbox-primary" />
+                                    <span class="text-lg">Gather your performance reviews, pay slips and tax
+                                        slips</span>
+                                </label>
+                            </div>
+                            <div class="form-control bg-base-200 p-4 rounded-lg">
+                                <label class="label cursor-pointer justify-start gap-4">
+                                    <input type="checkbox" class="checkbox checkbox-primary" />
+                                    <span class="text-lg">Gather all relevant emails and communication</span>
+                                </label>
+                            </div>
+                            <div class="form-control bg-base-200 p-4 rounded-lg">
+                                <label class="label cursor-pointer justify-start gap-4">
+                                    <input type="checkbox" class="checkbox checkbox-primary" />
+                                    <span class="text-lg">Contact an Employment Lawyer</span>
+                                </label>
+                            </div>
+                            <div class="form-control bg-base-200 p-4 rounded-lg">
+                                <label class="label cursor-pointer justify-start gap-4">
+                                    <input type="checkbox" class="checkbox checkbox-primary" />
+                                    <span class="text-lg">Review your employment contract and benefits</span>
+                                </label>
+                            </div>
+                            <div class="form-control bg-base-200 p-4 rounded-lg">
+                                <label class="label cursor-pointer justify-start gap-4">
+                                    <input type="checkbox" class="checkbox checkbox-primary" />
+                                    <span class="text-lg">Apply for unemployment benefits if eligible</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="card-actions justify-center mt-8">
+                            <button class="btn btn-outline btn-primary">Download Checklist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- French Content -->
+            <div class="lang-fr hidden">
+                <h2 class="text-3xl font-bold text-center mb-8">Votre liste de vérification de fin d'emploi</h2>
+                <div class="card bg-base-100 shadow-lg w-full max-w-2xl mx-auto border border-base-300">
+                    <div class="card-body">
+                        <div class="text-center mb-6">
+                            <p class="text-lg ">Utilisez cette liste pour vous assurer d'être préparé en cas de
+                                cessation
+                                d'emploi.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="form-control bg-base-200 p-4 rounded-lg">
+                                <label class="label cursor-pointer justify-start gap-4">
+                                    <input type="checkbox" class="checkbox checkbox-primary" />
+                                    <span class="text-lg">Rassembler vos évaluations, fiches de paie et
+                                        feuillets d'impôt</span>
+                                </label>
+                            </div>
+                            <div class="form-control bg-base-200 p-4 rounded-lg">
+                                <label class="label cursor-pointer justify-start gap-4">
+                                    <input type="checkbox" class="checkbox checkbox-primary" />
+                                    <span class="text-lg">Rassembler tous les courriels et communications
+                                        pertinents</span>
+                                </label>
+                            </div>
+                            <div class="form-control bg-base-200 p-4 rounded-lg">
+                                <label class="label cursor-pointer justify-start gap-4">
+                                    <input type="checkbox" class="checkbox checkbox-primary" />
+                                    <span class="text-lg">Contacter un avocat spécialisé en droit du travail</span>
+                                </label>
+                            </div>
+                            <div class="form-control bg-base-200 p-4 rounded-lg">
+                                <label class="label cursor-pointer justify-start gap-4">
+                                    <input type="checkbox" class="checkbox checkbox-primary" />
+                                    <span class="text-lg">Examiner votre contrat de travail et vos avantages
+                                        sociaux</span>
+                                </label>
+                            </div>
+                            <div class="form-control bg-base-200 p-4 rounded-lg">
+                                <label class="label cursor-pointer justify-start gap-4">
+                                    <input type="checkbox" class="checkbox checkbox-primary" />
+                                    <span class="text-lg">Demander des prestations de chômage si vous êtes
+                                        admissible</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="card-actions justify-center mt-8">
+                            <button class="btn btn-outline btn-primary">Télécharger la liste</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="py-12">
+            <div class="card bg-primary text-primary-content shadow-xl">
+                <div class="card-body text-center py-10">
+                    <!-- English Content -->
+                    <div class="lang-en">
+                        <h2 class="card-title text-2xl font-bold justify-center mb-4">Stay Prepared with BeReady</h2>
+                        <p class="mb-6 max-w-2xl mx-auto">Join our community to receive updates, resources, and expert
+                            advice on employment rights in Quebec.</p>
+                        <div class="card-actions justify-center">
+                            <button class="btn btn-lg bg-white text-primary hover:bg-base-200">Sign Up Now</button>
+                        </div>
+                    </div>
+
+                    <!-- French Content -->
+                    <div class="lang-fr hidden">
+                        <h2 class="card-title text-2xl font-bold justify-center mb-4">Restez préparé avec BeReady</h2>
+                        <p class="mb-6 max-w-2xl mx-auto">Rejoignez notre communauté pour recevoir des mises à jour, des
+                            ressources et des conseils d'experts sur les droits des employés au Québec.</p>
+                        <div class="card-actions justify-center">
+                            <button class="btn btn-lg bg-white text-primary hover:bg-base-200">S'inscrire
+                                maintenant</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+        <div>
+            <!-- English Content -->
+            <div class="lang-en">
+                <p class="font-bold text-lg mb-1">BeReady</p>
+                <p>Empowering Quebec workers since 2024</p>
+                <p>© 2024 BeReady - All rights reserved</p>
+            </div>
+
+            <!-- French Content -->
+            <div class="lang-fr hidden">
+                <p class="font-bold text-lg mb-1">BeReady</p>
+                <p>Au service des travailleurs québécois depuis 2024</p>
+                <p>© 2024 BeReady - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
+
 </html>
